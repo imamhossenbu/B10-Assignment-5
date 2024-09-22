@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- Font Family Url -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome url -->
+
+    <script src="https://kit.fontawesome.com/5ba82f8be8.js" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        btnColor: 'rgb(180, 244, 97)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section class="bg-orange-50 pt-5 pb-8">
+        <nav class=" flex flex-col md:flex-row justify-between items-center w-[80%] mx-auto">
+            <button class="bg-btnColor px-8 py-3 rounded-md font-semibold">Blog</button>
+            <div class="flex items-center gap-3">
+                <img src="./assets/logo.png" alt="">
+                <h1 class="font-semibold text-xl">Donate Bangladesh</h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="./assets/coin.png" alt="">
+                <h1 class="font-semibold">
+                    <span>5500</span>
+                    <span>BDT</span>
+                </h1>
+            </div>
+        </nav>
+    </section>
+
+
+    <section class="w-[90%] lg:w-[80%] mx-auto my-10">
+        <h1 class="text-2xl font-bold pb-5">Important FAQ <i class="fa-solid fa-question"></i></h1>
+        <div class="border-2 rounded-lg">
+            <!-- Ques. 01 -->
+            <div class="collapse collapse-arrow bg-base-100">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-lg font-medium">What is the Document Object Model (DOM)?</div>
+                <div class="collapse-content">
+                    <p>The Document Object Model (DOM) is a programming interface that represents a web page as a tree
+                        structure, allowing developers to dynamically access, modify, and interact with elements using
+                        JavaScript.</p>
+                </div>
+            </div>
+            <div class="border-b "></div>
+
+            <!--  Ques. 02-->
+
+
+            <div class="collapse collapse-arrow bg-base-100">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-lg font-medium">How do you select an element from the DOM?</div>
+                <div class="collapse-content">
+                    <p>To select an element from the DOM, you can use JavaScript methods like:
+                    <ul class="list-disc pl-4">
+                        <li>getElementById()</li>
+                        <li>getElementsByClassName()</li>
+                        <li>getElementsByTagName()</li>
+                        <li>querySelector()</li>
+                        <li>querySelectorAll()</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="border-b "></div>
+
+            <!-- Ques. 03 -->
+
+            <div class="collapse collapse-arrow bg-base-100">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-lg font-medium">What is event delegation in the context of the DOM, and
+                    why is it useful?</div>
+                <div class="collapse-content">
+                    <p>Event delegation in the DOM is a technique where a single event listener is attached to a parent
+                        element to manage events for multiple child elements. Instead of adding individual listeners to
+                        each child, the event bubbles up to the parent, allowing it to handle events from all children.
+                        <h1 class="text-xl font-semibold py-3">Why It's Useful:</h1>
+                        <ol class="list-decimal pl-4">
+                            <li><span class="font-semibold">Performance:</span> Reduces the number of event listeners, improving efficiency, especially with many dynamic elements.</li>
+                            <li><span class="font-semibold">Simplifies Code:</span> Makes it easier to manage events for dynamically added elements without re-attaching listeners.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="border-b "></div>
+
+            <!-- Ques. 04 -->
+
+            <div class="collapse collapse-arrow bg-base-100">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-lg font-medium"> How do you manipulate an element's attributes and
+                    styles using the DOM?</div>
+                <div class="collapse-content">
+                    <p>You can manipulate an element's attributes and styles using the DOM in JavaScript by:
+                        <ol>
+                            <li class="py-3">
+                                <h1 class="text-xl font-semibold">Attributes</h1>
+                                <ul class="list-disc pl-5">
+                                    <li>Get an attribute: element.getAttribute("attributeName")</li>
+                                    <li>Set an attribute: element.setAttribute("attributeName", "value")</li>
+                                    <li>Remove an attribute: element.removeAttribute("attributeName")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h1 class="text-xl font-semibold">Styles</h1>
+                                <ul class="list-disc pl-5">
+                                    <li>
+                                        Access/Modify inline styles: element.style.propertyName
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
