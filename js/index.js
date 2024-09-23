@@ -30,27 +30,29 @@ const card3 = document.getElementById('card-3-btn');
 
 
 
+donation.addEventListener('click', function() {
+  showDonationHistory('donation');
+
+  donation.classList.add('activeBtn');
+  donation.classList.remove('inactiveBtn');
+
+  history.classList.remove('activeBtn');  
+  history.classList.add('inactiveBtn');   
+});
 
 
 
 
-donation.addEventListener('click',function(){
-    showDonationHistory('donation');
-    
-    donation.classList.add('activeBtn');
-    donation.classList.remove('inactiveBtn');
-    
-})
+// History button click event
+history.addEventListener('click', function() {
+  showDonationHistory('history');
 
+  history.classList.add('activeBtn');
+  history.classList.remove('inactiveBtn');
 
-history.addEventListener('click',function(){
-    showDonationHistory('history');
-
-    history.classList.add('activeBtn');
-    donation.classList.remove('activeBtn');
-
-
-})
+  donation.classList.remove('activeBtn');  
+  donation.classList.add('inactiveBtn');   
+});
 
 
 card1.addEventListener('click',function(){
