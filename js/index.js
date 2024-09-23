@@ -14,6 +14,10 @@ window.addEventListener("scroll",function(){
 })
 
 
+const title1 = document.getElementById('title1').innerText;
+const title2 = document.getElementById('title2').innerText;
+const title3 = document.getElementById('title3').innerText;
+
 
 const donation = document.getElementById('donation-btn');
 const history = document.getElementById('history-btn');
@@ -75,6 +79,13 @@ card1.addEventListener('click',function(){
       price1.innerText = price1Value;
 
 
+      document.getElementById('history').innerHTML +=`
+      <div class="border rounded-lg p-5 my-5 shadow-md">
+           <h1 class="text-lg font-semibold pb-3">${value1} Taka is ${title1}</h1>
+           <p class="text-gray-600 font-light">Date: ${new Date()}</p>
+       </div>
+     `
+
       modalShow('my_modal_1'); 
   }
 
@@ -108,6 +119,12 @@ card2.addEventListener('click',function(){
       price2Value = price2Value + value2;
       price2.innerText = price2Value;
 
+      document.getElementById('history').innerHTML +=`
+      <div class="border rounded-lg p-5 my-5 shadow-md">
+           <h1 class="text-lg font-semibold pb-3">${value2} Taka is ${title2}</h1>
+           <p class="text-gray-600 font-light">Date: ${new Date()}</p>
+       </div>
+     `
 
       modalShow('my_modal_2');  
   }
@@ -141,6 +158,13 @@ card3.addEventListener('click',function(){
       price3Value = price3Value + value3;
       price3.innerText = price3Value;
 
+
+      document.getElementById('history').innerHTML +=`
+    <div class="border rounded-lg p-5 my-5 shadow-md">
+         <h1 class="text-lg font-semibold pb-3">${value3} Taka is Donated for ${title3}</h1>
+         <p class="text-gray-600 font-light">Date: ${new Date()}</p>
+     </div>
+   `
 
       modalShow('my_modal_3'); 
   }
