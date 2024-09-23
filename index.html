@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head >
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B10-assignment-5</title>
@@ -33,11 +33,17 @@
         body {
             font-family: "Lexend", sans-serif;
         }
+        .activeBtn{
+            background-color: lime;
+        }
+        .inactiveBtn{
+            background-color: silver;
+        }
     </style>
 </head>
 
 <body>
- 
+
     <header class="border-b sticky w-full mb-5 top-0">
         <section class="bg-orange-50 pt-3 pb-5">
             <nav class=" flex flex-col md:flex-row justify-between items-center w-[80%] mx-auto">
@@ -49,20 +55,24 @@
                 <div class="flex items-center gap-2">
                     <img src="./assets/coin.png" alt="">
                     <h1 class="font-semibold">
-                        <span>5500</span>
+                        <span id="available-balance">5500</span>
                         <span>BDT</span>
                     </h1>
                 </div>
             </nav>
         </section>
-        <section class="text-center py-6 bg-gray-50">
-            <button class="bg-btnColor py-3 px-6 mr-2 rounded-md hover:bg-gray-400 font-semibold">Donation</button>
-            <button class="bg-btnColor py-3 px-6 mr-2 rounded-md hover:bg-gray-400 font-semibold">History</button>
+        <section class="text-center py-6 bg-gray-100 opacity-90">
+            <button id="donation-btn"
+                class="activeBtn py-3 px-6 mr-2 rounded-md hover:bg-gray-400 font-semibold  active">Donation</button>
+            <button id="history-btn"
+                class="inactiveBtn py-3 px-6 mr-2 rounded-md hover:bg-gray-400 font-semibold ">History</button>
         </section>
     </header>
 
 
-    <section class=" w-[90%] lg:w-[80%] mx-auto space-y-5 mb-20">
+    <section id="donation" class=" w-[90%] lg:w-[80%] mx-auto space-y-5 mb-20">
+
+
         <!-- card1 -->
         <div class="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 p-5 rounded-lg border">
             <div class=>
@@ -72,7 +82,7 @@
                 <button class="flex items-center gap-2 py-2 px-6 rounded-md bg-gray-200 mb-5">
                     <img src="./assets/coin.png" alt="">
                     <h1>
-                        <span>0</span>
+                        <span id="price1">0</span>
                         <span>BDT</span>
                     </h1>
                 </button>
@@ -81,27 +91,27 @@
                     damage to homes infrastructure. Your donation will help provide essential supplies and to those
                     affected by this disaster. Every contribution, big or small, makes difference. Please join us in
                     supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text" name="" id=""
-                    placeholder="Write Donation Amount"> <br>
-                <div onclick="my_modal_1.showModal()"
+                <input id="input1" class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text"
+                    name="" id="" placeholder="Write Donation Amount"> <br>
+                <div id="card-1-btn"
                     class="border text-center bg-btnColor py-2 rounded-md cursor-pointer font-semibold">
                     <button>Donate Now</button>
-                    <dialog id="my_modal_1" class="modal">
-                        <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
-                            <div class="flex justify-center items-center flex-col">
-                                <h1 class="text-3xl font-bold my-8">Congrates!</h1>
-                                <img src="./assets/coin.png" alt="">
-                                <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
-                                <h3>Successfully</h3>
-                            </div>
-                            <div class="my-5">
-                                <form method="dialog">
-                                    <button class="btn btn-base-200  border-none">Close Confirmation</button>
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
                 </div>
+                <dialog id="my_modal_1" class="modal">
+                    <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
+                        <div class="flex justify-center items-center flex-col">
+                            <h1 class="text-3xl font-bold my-8">Congrates!</h1>
+                            <img src="./assets/coin.png" alt="">
+                            <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
+                            <h3>Successfully</h3>
+                        </div>
+                        <div class="my-5">
+                            <form class="flex justify-center items-center" method="dialog">
+                                <button id="modal-btn" class="btn btn-base-200  border-none">Close Confirmation</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
             </div>
         </div>
 
@@ -114,7 +124,7 @@
                 <button class="flex items-center gap-2 py-2 px-6 rounded-md bg-gray-200 mb-5">
                     <img src="./assets/coin.png" alt="">
                     <h1>
-                        <span>0</span>
+                        <span id="price2">0</span>
                         <span>BDT</span>
                     </h1>
                 </button>
@@ -125,27 +135,29 @@
                     calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this
                     disaster. Every contribution counts towards making a real difference. Please consider donating today
                     to assist those in urgent need.</p>
-                <input class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text" name="" id=""
-                    placeholder="Write Donation Amount"> <br>
-                <div onclick="my_modal_2.showModal()" class="border text-center bg-btnColor py-2 rounded-md cursor-pointer font-semibold">
+                <input id="input2" class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text"
+                    name="" id="" placeholder="Write Donation Amount"> <br>
+                <div id="card-2-btn"
+                    class="border text-center bg-btnColor py-2 rounded-md cursor-pointer font-semibold">
                     <button>Donate Now</button>
-                    <dialog id="my_modal_2" class="modal">
-                        <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
-                            <div class="flex justify-center items-center flex-col">
-                                <h1 class="text-3xl font-bold my-8">Congrates!</h1>
-                                <img src="./assets/coin.png" alt="">
-                                <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
-                                <h3>Successfully</h3>
-                            </div>
-                            <div class="my-5">
-                                <form method="dialog">
-                                    <button class="btn btn-base-200  border-none">Close Confirmation</button>
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
                 </div>
+                <dialog id="my_modal_2" class="modal">
+                    <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
+                        <div class="flex justify-center items-center flex-col">
+                            <h1 class="text-3xl font-bold my-8">Congrates!</h1>
+                            <img src="./assets/coin.png" alt="">
+                            <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
+                            <h3>Successfully</h3>
+                        </div>
+                        <div class="my-5">
+                            <form class="flex justify-center items-center" method="dialog">
+                                <button id="modal-btn" class="btn btn-base-200  border-none">Close Confirmation</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
             </div>
+        </div>
         </div>
 
         <!-- card-3 -->
@@ -158,7 +170,7 @@
                 <button class="flex items-center gap-2 py-2 px-6 rounded-md bg-gray-200 mb-5">
                     <img src="./assets/coin.png" alt="">
                     <h1>
-                        <span>0</span>
+                        <span id="price3">0</span>
                         <span>BDT</span>
                     </h1>
                 </button>
@@ -169,38 +181,43 @@
                     ensure that injured individuals receive the care and support they need during this challenging time.
                     Every donation plays a vital role in alleviating their suffering and aiding in their recovery.
                     Please consider making a donation to support these brave individuals in their time of need.</p>
-                <input class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text" name="" id=""
-                    placeholder="Write Donation Amount"> <br>
-                <div onclick="my_modal_3.showModal()" class="border text-center bg-btnColor py-2 rounded-md cursor-pointer font-semibold">
+                <input id="input3" class="border-2 w-[100%] py-3 rounded-md mb-5 placeholder:text-sm px-3" type="text"
+                    name="" id="" placeholder="Write Donation Amount"> <br>
+                    <div id="card-3-btn"
+                    class="border text-center bg-btnColor py-2 rounded-md cursor-pointer font-semibold">
                     <button>Donate Now</button>
-                    <dialog id="my_modal_3" class="modal">
-                        <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
-                            <div class="flex justify-center items-center flex-col">
-                                <h1 class="text-3xl font-bold my-8">Congrates!</h1>
-                                <img src="./assets/coin.png" alt="">
-                                <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
-                                <h3>Successfully</h3>
-                            </div>
-                            <div class="my-5">
-                                <form method="dialog">
-                                    <button class="btn btn-base-200 border-none">Close Confirmation</button>
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
                 </div>
+                <dialog id="my_modal_3" class="modal">
+                    <div class="bg-white p-5 w-[80%] lg:w-[30%] rounded-xl">
+                        <div class="flex justify-center items-center flex-col">
+                            <h1 class="text-3xl font-bold my-8">Congrates!</h1>
+                            <img src="./assets/coin.png" alt="">
+                            <p class="text-sm font-light py-2">You Have Donated For Humankind</p>
+                            <h3>Successfully</h3>
+                        </div>
+                        <div class="my-5">
+                           <form class="flex justify-center items-center" method="dialog">
+                            <button id="modal-btn" class="btn btn-base-200  border-none">Close Confirmation</button> 
+                           </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
             </div>
         </div>
 
     </section>
 
 
-    <section>
-
+    <section id="history" class="hidden w-[90%] lg:w-[80%] mx-auto ">
+        <h1>History</h1>
     </section>
 
-    <script src="./js/index.js"></script>
+
+
     <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+ 
 </body>
 
 </html>
