@@ -15,15 +15,6 @@ function showDonationHistory(id){
 
 
 
-function activeBtn(active,inactive){
-    // donationBtn.classList.add('activeBtn');
-    // historyBtn.classList.add('activeBtn');
-
-    // document.getElementById(active,inactive).classList.remove('activeBtn');
-
-
-}
-
 
 function modalShow(id){
     document.getElementById(id).showModal();
