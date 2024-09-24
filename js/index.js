@@ -3,16 +3,6 @@ function myBlog(){
 }
 
 
-const nav = document.querySelector('header');
-window.addEventListener("scroll",function(){
-  if(document.documentElement.scrollTop > 0){
-    nav.classList.add("sticky");
-  }
-  else{
-    nav.classList.remove("sticky");
-  }
-})
-
 
 const title1 = document.getElementById('title1').innerText;
 const title2 = document.getElementById('title2').innerText;
