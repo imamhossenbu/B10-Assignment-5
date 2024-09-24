@@ -88,7 +88,9 @@ card1.addEventListener('click',function(){
        </div>
      `
 
-      modalShow('my_modal_1'); 
+      modalShow('my_modal_1');
+      
+      input1.value = '';
   }
 
 
@@ -129,6 +131,7 @@ card2.addEventListener('click',function(){
      `
 
       modalShow('my_modal_2');  
+      input2.value = '';
   }
 
 
@@ -169,6 +172,7 @@ card3.addEventListener('click',function(){
    `
 
       modalShow('my_modal_3'); 
+      input3.value = '';
   }
 
 
